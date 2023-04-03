@@ -31,10 +31,11 @@ def go(args):
     idx = df['price'].between(args.min_price, args.max_price)
     df = df[idx].copy()
     
-    output_filename = "clean_sample.csv"
+    logger.info("Removing null values.")
+    df.dropna(inplace=True)
 
-    logger.info(f"Saving artifact as {output_filename}.")
-    df.to_csv(output_filename, index=False)
+    logger.info(f"Saving artifact as {args.output_artifact}.")
+    df.to_csv(args.output_artifact, index=False)
 
     logger.info("Logging cleaned data.")
     artifact = wandb.Artifact(
@@ -42,7 +43,7 @@ def go(args):
         type=args.output_type,
         description=args.output_description
     )
-    artifact.add_file(output_filename)
+    artifact.add_file(args.output_artifact)
     run.log_artifact(artifact)
 
 if __name__ == "__main__":
