@@ -1,7 +1,8 @@
 # ML Pipeline for Short-Term Rental Prices in NYC
 
 
-[Project's W&B page](https://wandb.ai/erdemkarakoylu/nyc_airbnb/overview)
+[Link to Project's W&B Page](https://wandb.ai/erdemkarakoylu/nyc_airbnb/overview)
+[Link to Project's Github Page](https://github.com/erdemkarakoylu/ml_pipeline_4_airbnb_nyc)
 
 The goal is to practice building an end-to-end reusable pipeline. Emphasis is not on model performance; this is meant as a reference to come back to when needed. The pipeline includes basic EDA, cleaning, data testing, training and validation components.
 
