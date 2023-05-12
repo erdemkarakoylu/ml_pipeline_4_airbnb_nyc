@@ -1,19 +1,12 @@
-# Building an ML Pipeline for Short-Term Rental Prices in NYC
-The goal is to practice building an end-to-end pipeline that can be reused.
-While EDA, cleaning, data testing, training and validation components are present, these are pretty basic as the focus is not model performance. Rather this rather is meant as a reference to come back to when needed.
+# ML Pipeline for Short-Term Rental Prices in NYC
 
-Note in addition to pipeline code, there is also "cookiecutter" code to facilitate
-the creation of pipeline components to get going faster. An example for the use of a cookiecutte template is as follows:
-```bash
-> cookiecutter cookie-mlflow-step -o src
 
-step_name [step_name]: basic_cleaning
-script_name [run.py]: run.py
-job_type [my_step]: basic_cleaning
-short_description [My step]: This steps cleans the data
-long_description [An example of a step using MLflow and Weights & Biases]: Performs basic cleaning on the data and save the results in Weights & Biases
-parameters [parameter1,parameter2]: parameter1,parameter2,parameter3
-```
+[Link to Project's W&B Page](https://wandb.ai/erdemkarakoylu/nyc_airbnb/overview)
+
+[Link to Project's Github Page](https://github.com/erdemkarakoylu/ml_pipeline_4_airbnb_nyc)
+
+The goal is to practice building an end-to-end reusable pipeline. Emphasis is not on model performance; this is meant as a reference to come back to when needed. The pipeline includes basic EDA, cleaning, data testing, training and validation components.
+
 
 Note that each component is defined in its own subdirectory, which contains at least 3 files:
 * MLproject; an yaml file used by MLFlow to run the script that defines the component operations. MLFlow is called on to do this by the main.py script in the root directory.
@@ -29,6 +22,9 @@ The required packages are specified in an environment.yml. The only initial requ
 > conda activate nyc_airbnb_dev
 ``` 
 ... then <u>remember to log into W&B</u>
+
+
+
 
 ### Pipeline configuration
 Pipeline configuration is managed via Hydra with parameters defined in the ``config.yaml`` file defined in the root and read by main.py. 
